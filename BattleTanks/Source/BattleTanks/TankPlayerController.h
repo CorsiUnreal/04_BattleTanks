@@ -23,5 +23,6 @@ public:
 	//Start the tank moving the barrel so that a shot would hit where
 	//the crossair intersects the world
 	void AimTowardCrossair();
+	bool GetSightHitLocation(FVector& OutHitLocation) const;
 	
 };
