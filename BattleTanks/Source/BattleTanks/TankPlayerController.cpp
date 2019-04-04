@@ -29,6 +29,12 @@ ATank* ATankPlayerController::GetControlledTank() const {
 
 void ATankPlayerController::AimTowardCrossair() {
 	if (!GetControlledTank()) { return; }
+
+	FVector OutHitLocation;
+	if (GetSightHitLocation(OutHitLocation)) {
+
+	}
+
 }
 
 bool ATankPlayerController::GetSightHitLocation(FVector& OutHitLocation) const {

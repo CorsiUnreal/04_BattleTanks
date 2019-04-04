@@ -23,6 +23,7 @@ public:
 	//Start the tank moving the barrel so that a shot would hit where
 	//the crossair intersects the world
 	void AimTowardCrossair();
+	//Return true if the crossair hits the landscape, and a OUT FVector of the position
 	bool GetSightHitLocation(FVector& OutHitLocation) const;
 	
 };
