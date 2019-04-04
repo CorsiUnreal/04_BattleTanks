@@ -39,6 +39,14 @@ void ATankPlayerController::AimTowardCrossair() {
 
 bool ATankPlayerController::GetSightHitLocation(FVector& OutHitLocation) const {
 
+	int32 ViewportSizeX, ViewportSizeY;
+	GetViewportSize(ViewportSizeX, ViewportSizeY);
+
+	float XCoord = ViewportSizeX * CrossAirXLocation;
+	float YCoord = ViewportSizeY * CrossAirYLocation;
+
+	auto ScreenCoords = FVector2D(XCoord, YCoord);
+
 	return true;
 }
 
