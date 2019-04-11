@@ -4,8 +4,11 @@
 
 #include "Tank.h"
 #include "CoreMinimal.h"
+#include "Engine/World.h"
+#include "Engine/EngineTypes.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h"
+
 
 /**
  * 
@@ -26,10 +29,17 @@ private:
 	//Return true if the crossair hits the landscape, and a OUT FVector of the position
 	bool GetSightHitLocation(FVector& OutHitLocation) const;
 
+	bool GetLookDirection(FVector2D ScreenCoords, FVector& OutLookDirection) const;
+
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& OutHitLocation) const;
+
 	UPROPERTY(EditAnywhere)
 		float CrossAirXLocation = 0.5f;
 
 	UPROPERTY(EditAnywhere)
 		float CrossAirYLocation = 0.33333f;
+
+	UPROPERTY(EditAnywhere)
+		float LineTraceRange = 1000000.0f;
 	
 };
